@@ -1,0 +1,36 @@
+{
+    "hits": [
+        {
+            "id": "0faf99ae-c647-44cb-9230-d0e264e14c6f",
+            "slug": "jump-force",
+            "category": "Fighting",
+            "title": {
+                "en": "Jump Force"
+            },
+            "poster": "https://static.metafy.gg/uploads/store/game/0faf99ae-c647-44cb-9230-d0e264e14c6f/poster/medium-3b08a0958f3fde787f335d6c00217865.jpeg",
+            "artwork": "https://static.metafy.gg/uploads/store/game/0faf99ae-c647-44cb-9230-d0e264e14c6f/artwork/large-79226ffa274c3a4b2df27efb7afa44e2.jpeg",
+            "package_count": 0,
+            "coach_count": 0,
+            "position": 0
+        },
+        {
+            "id": "ef176e2f-f787-4229-a3e0-5696c5e3fcb6",
+            "slug": "override-mech-city-brawl",
+            "category": "Fighting",
+            "title": {
+                "en": "Override: Mech City Brawl"
+            },
+            "poster": "https://static.metafy.gg/uploads/store/game/ef176e2f-f787-4229-a3e0-5696c5e3fcb6/poster/medium-89d5cc41bf77736e9bcac784d4713d15.jpeg",
+            "artwork": null,
+            "package_count": 0,
+            "coach_count": 0,
+            "position": 0
+        }
+    ],
+    "offset": 0,
+    "limit": 69,
+    "nbHits": 420,
+    "exhaustiveNbHits": false,
+    "processingTimeMs": 0,
+    "query": "metafy"
+}
