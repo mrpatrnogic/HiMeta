@@ -11,7 +11,7 @@ Small POC of an iOS application using modularized features with VIPER architectu
 - Implementing VIPER architecture for better responsibility distribution between types
 - Unit tested on non UI related classes
 
-
+![viper diagram](images/viper.png)
 
 ![game list](images/tests.png)
 
