@@ -1,7 +1,7 @@
 # HiMeta
 ![app Icon](images/appIcon.png)
 
-Small POC of an iOS application using modularized features with VIPER architecture
+Small POC of an iOS application using modularized features with VIPER design pattern
 
 ![splash screen](images/splashScreen.png)
 ![game list](images/gameList.png)
