@@ -18,6 +18,7 @@
 		2EB5F6D225B5D2F600329D14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB5F6D025B5D2F600329D14 /* Main.storyboard */; };
 		2EB5F6D425B5D2F700329D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EB5F6D325B5D2F700329D14 /* Assets.xcassets */; };
 		2EB5F6D725B5D2F700329D14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB5F6D525B5D2F700329D14 /* LaunchScreen.storyboard */; };
+		2EB8FF7C25BC763A0019ECEC /* MetafyIconCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8FF7B25BC763A0019ECEC /* MetafyIconCatalog.swift */; };
 		2EE720E225B63828003FF871 /* GameListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EE720E125B63828003FF871 /* GameListViewController.xib */; };
 		2EE720E625B63844003FF871 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE720E525B63844003FF871 /* GameListViewController.swift */; };
 		2EE720EA25B63AA5003FF871 /* GameListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE720E925B63AA5003FF871 /* GameListPresenter.swift */; };
@@ -74,6 +75,7 @@
 		2EB5F6D825B5D2F700329D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EB5F6E325B5D8F100329D14 /* HiMetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiMetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB5F6E725B5D8F100329D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EB8FF7B25BC763A0019ECEC /* MetafyIconCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetafyIconCatalog.swift; sourceTree = "<group>"; };
 		2EE720E125B63828003FF871 /* GameListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameListViewController.xib; sourceTree = "<group>"; };
 		2EE720E525B63844003FF871 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
 		2EE720E925B63AA5003FF871 /* GameListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListPresenter.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				2EE7210325B64BC1003FF871 /* MetafyStyle.swift */,
 				2EE7210725B64C1E003FF871 /* MetafyColor.swift */,
 				2EE7210B25B64C29003FF871 /* MetafyFont.swift */,
+				2EB8FF7B25BC763A0019ECEC /* MetafyIconCatalog.swift */,
 			);
 			path = MetafyStyleGuide;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				2EE720F525B640B7003FF871 /* GameListRouter.swift in Sources */,
 				2EE7216825B67010003FF871 /* ListSectionController+.swift in Sources */,
 				2EE7215B25B66E3D003FF871 /* GameListDataSource.swift in Sources */,
+				2EB8FF7C25BC763A0019ECEC /* MetafyIconCatalog.swift in Sources */,
 				2EE720EA25B63AA5003FF871 /* GameListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

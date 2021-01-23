@@ -15,4 +15,8 @@ public struct MetafyColorCore {
     public let background: UIColor = UIColor(
         named: "background", in: nil, compatibleWith: nil
     ) ?? UIColor()
+    
+    public let stone: UIColor = UIColor(
+        named: "stone", in: nil, compatibleWith: nil
+    ) ?? UIColor()
 }

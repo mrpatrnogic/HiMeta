@@ -31,6 +31,24 @@ final class GameTileCell: UICollectionViewCell {
             titleLabel.textColor = .white
         }
     }
+    @IBOutlet private weak var coachesLabel: UILabel! {
+        didSet {
+            coachesLabel.layer.cornerRadius = 5.0
+            coachesLabel.layer.borderWidth = 1.0
+            coachesLabel.layer.borderColor = MetafyStyle.color.stone.cgColor
+            coachesLabel.font = MetafyStyle.font.captionTwoRegular
+            coachesLabel.textColor = .white
+        }
+    }
+    @IBOutlet private weak var lessonsLabel: UILabel! {
+        didSet {
+            lessonsLabel.layer.cornerRadius = 5.0
+            lessonsLabel.layer.borderWidth = 1.0
+            lessonsLabel.layer.borderColor = MetafyStyle.color.stone.cgColor
+            lessonsLabel.font = MetafyStyle.font.captionTwoRegular
+            lessonsLabel.textColor = .white
+        }
+    }
     @IBOutlet private weak var containerView: UIView! {
         didSet {
             containerView.backgroundColor = MetafyStyle.color.background
@@ -41,6 +59,8 @@ final class GameTileCell: UICollectionViewCell {
     func update(with item: AnyObject?) {
         guard let gameTile = item as? GameTile else { return }
         titleLabel.text = gameTile.title
+        coachesLabel.text = "\(gameTile.coachCount) Coaches"
+        lessonsLabel.text = "\(gameTile.lessonCount) Lessons"
         posterImageView.sd_setImage(with: URL(string: gameTile.poster))
         artworkImageView.sd_setImage(with: URL(string: gameTile.artwork))
     }

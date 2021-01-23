@@ -64,6 +64,7 @@ private extension GameListNetworker {
                             offset: Int,
                             limit: Int,
                             filters: String) ->  URLRequest? {
+        print("SEARCH QUERY: \(query)")
         let urlString: String = "https://search.metafy.gg//indexes/games/search"
         let apiKey: String = "743f623717fa650ac58dc5b6a65da4d87320bc6cd6fc8e3ad84d1bd5e4c66c35"
         guard let url = URL(string: urlString) else { return nil }
