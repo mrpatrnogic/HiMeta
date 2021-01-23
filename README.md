@@ -3,10 +3,11 @@
 
 Small POC of an iOS application using modularized features with VIPER design pattern
 
-![splash screen](images/splashScreen.png)
-![game list](images/gameList.png)
+![game list](images/splash.png)
+![game list](images/search.png)
 
 - Game list fetched from a remote API
+- Search feature with throttle to prevent unnecessary network requests
 - Build with modularization in mind
 - Implementing VIPER architecture for better responsibility distribution between types
 - Unit tested on non UI related classes
@@ -19,7 +20,6 @@ Small POC of an iOS application using modularized features with VIPER design pat
 To-do list
 ---
 - [ ] Implement navigation to new modules (game detail)
-- [ ] Implement search criteria on game list
-- [ ] Implement infinite scrolling (until endpoint returns no more results)
+- [ ] Implement infinite scrolling with paging (until endpoint returns no more results)
 - [ ] Add placeholder for remote images when loading
 - [ ] Display loading status when fetching data
