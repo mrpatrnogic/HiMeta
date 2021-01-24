@@ -16,7 +16,6 @@ enum GameListUIEvent {
 }
 
 enum GameListUserAction {
-    case requestMoreItems
     case selectGame(_ game: GameTile)
 }
 
@@ -24,6 +23,7 @@ protocol GameListPresenterProtocol: GameListDataSourceDelegate {
     var onUIEvent: Observable<GameListUIEvent> { get }
     func presentGameList()
     func fetchGames(query: String)
+    func fetchMoreItems()
 }
 
 final class GameListPresenter: GameListPresenterProtocol {
@@ -65,13 +65,12 @@ final class GameListPresenter: GameListPresenterProtocol {
                 switch action {
                 case .selectGame(let game):
                     self.openGameDetail(game)
-                case .requestMoreItems:
-                    break
                 }
             }).disposed(by: section.disposeBag)
     }
     
     func fetchGames(query: String) {
+        onUIEventSubject.onNext(.showLoader(true))
         interactor
             .fetchGames(query: query).subscribe(onCompleted: { [weak self] in
                 self?.onUIEventSubject.onNext(.showLoader(false))
@@ -81,6 +80,19 @@ final class GameListPresenter: GameListPresenterProtocol {
                 self?.onUIEventSubject.onNext(.showError(error))
             })
             .disposed(by: disposeBag)
+    }
+    
+    func fetchMoreItems() {
+        guard interactor.shouldFetchMoreItems else { return }
+        onUIEventSubject.onNext(.showLoader(true))
+        interactor.fetchMoreItems().subscribe(onCompleted: { [weak self] in
+            self?.onUIEventSubject.onNext(.showLoader(false))
+            self?.onUIEventSubject.onNext(.reloadData)
+        }, onError: { [weak self] (error) in
+            self?.onUIEventSubject.onNext(.showLoader(false))
+            self?.onUIEventSubject.onNext(.showError(error))
+        })
+        .disposed(by: disposeBag)
     }
     
     func openGameDetail(_ game: GameTile) {

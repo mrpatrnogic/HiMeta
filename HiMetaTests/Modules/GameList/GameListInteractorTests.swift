@@ -61,10 +61,32 @@ class GameListInteractorTests: XCTestCase {
         XCTAssert(failure)
     }
     
+    func test_shouldFetchMoreItems() {
+        let interactor = sut.interactor
+        let shouldFetchItems_before = interactor.shouldFetchMoreItems
+        _ = interactor.fetchMoreItems().toBlocking(timeout: 2.0)
+        let shouldFetchItems_after = interactor.shouldFetchMoreItems
+        
+        XCTAssertEqual(shouldFetchItems_before, true)
+        XCTAssertEqual(shouldFetchItems_after, false)
+    }
+    
+    func test_fetchMoreItems() {
+        let interactor = sut.interactor
+        let networker = sut.networker
+        networker.fetchCount = 0
+        
+        _ = interactor.fetchMoreItems().toBlocking(timeout: 2.0)
+        
+        XCTAssertEqual(networker.fetchCount, 1)
+    }
+    
 
     private class NetworkerSpy: GameListNetworkerProtocol {
         var shouldSucceed = false
+        var fetchCount = 0
         func fetchGames(query: String, offset: Int, limit: Int, filters: String) -> Single<[String : Any]> {
+            fetchCount += 1
             return shouldSucceed ? .just([:]) : .error(TestError())
         }
     }

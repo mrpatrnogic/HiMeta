@@ -34,6 +34,12 @@ final class GameListViewController: UIViewController {
                                                                        attributes: placeholderAttributes)
         }
     }
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            activityIndicator.color = .gray
+            activityIndicator.hidesWhenStopped = true
+        }
+    }
     @IBOutlet private weak var collection: UICollectionView! {
         didSet {
             collection.backgroundColor = .black
@@ -76,6 +82,7 @@ private extension GameListViewController {
     func setUpCollectionView() {
         adapter.collectionView = collection
         adapter.dataSource = dataSource
+        adapter.scrollViewDelegate = self
         dataSource.delegate = presenter
     }
     
@@ -87,7 +94,7 @@ private extension GameListViewController {
                 case .reloadData:
                     self?.adapter.reloadData()
                 case .showLoader(let show):
-                    break
+                    self?.showLoader(show)
                 case .showError(let error):
                     break
                 }
@@ -102,5 +109,18 @@ private extension GameListViewController {
             })
             .disposed(by: disposeBag)
 
+    }
+    
+    func showLoader(_ show: Bool) {
+        show ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+    }
+}
+
+extension GameListViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let endPoint = scrollView.contentOffset.y + scrollView.frame.size.height
+        if endPoint >= 0.8 * scrollView.contentSize.height {
+            presenter.fetchMoreItems()
+        }
     }
 }

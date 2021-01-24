@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameListViewController" customModule="HiMeta" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="cD3-FF-js3" id="Jnc-6W-KZ3"/>
                 <outlet property="collection" destination="rQN-8r-vXU" id="7PG-v6-ckG"/>
                 <outlet property="searchTextField" destination="BWH-W1-Qi5" id="aDq-dl-VeD"/>
                 <outlet property="titleLabel" destination="yZS-bV-iX7" id="6Mt-FK-1qq"/>
@@ -45,6 +46,9 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="cD3-FF-js3">
+                    <rect key="frame" x="363" y="98" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Ed9-C7-waU"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,6 +61,8 @@
                 <constraint firstItem="Ed9-C7-waU" firstAttribute="trailing" secondItem="yZS-bV-iX7" secondAttribute="trailing" constant="16" id="cM7-2o-H1i"/>
                 <constraint firstItem="BWH-W1-Qi5" firstAttribute="top" secondItem="yZS-bV-iX7" secondAttribute="bottom" constant="10" id="euU-A5-skn"/>
                 <constraint firstItem="yZS-bV-iX7" firstAttribute="leading" secondItem="Ed9-C7-waU" secondAttribute="leading" constant="16" id="ftZ-Sp-Ubk"/>
+                <constraint firstItem="cD3-FF-js3" firstAttribute="centerY" secondItem="BWH-W1-Qi5" secondAttribute="centerY" id="iDx-xw-gWn"/>
+                <constraint firstItem="cD3-FF-js3" firstAttribute="trailing" secondItem="BWH-W1-Qi5" secondAttribute="trailing" constant="-15" id="jai-Ci-Guy"/>
                 <constraint firstItem="Ed9-C7-waU" firstAttribute="trailing" secondItem="BWH-W1-Qi5" secondAttribute="trailing" constant="16" id="nZZ-e9-0zt"/>
                 <constraint firstItem="Ed9-C7-waU" firstAttribute="trailing" secondItem="rQN-8r-vXU" secondAttribute="trailing" constant="8" id="reJ-9c-puq"/>
             </constraints>

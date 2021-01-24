@@ -68,13 +68,47 @@ class GameListPresenterTests: XCTestCase {
         XCTAssert(didReloadData)
         XCTAssertEqual(interactor.fetchCount, 1)
     }
+    
+    func test_fetchMoreItems_success() {
+        let presenter = sut.presenter
+        let resultExpectation = expectation(description: "fetch more items success expectation")
+        var loaderDidAppear: Bool = false
+        var loaderDidDisappearAfter: Bool = false
+        var reloadDataCount: Int = 0
+        
+        presenter.onUIEvent.subscribe(onNext: { [weak self] event in
+            switch event {
+            case .showLoader(let show):
+                if show {
+                    loaderDidAppear = !loaderDidDisappearAfter
+                } else {
+                    loaderDidDisappearAfter = loaderDidAppear
+                }
+            case .reloadData:
+                reloadDataCount += 1
+                resultExpectation.fulfill()
+            default: break
+            }
+        })
+        presenter.fetchMoreItems()
+        
+        waitForExpectations(timeout: 2.0, handler: nil)
+        XCTAssert(loaderDidAppear)
+        XCTAssert(loaderDidDisappearAfter)
+        XCTAssertEqual(reloadDataCount, 1)
+    }
 
     private class InteractorSpy: GameListInteractorProtocol {
         var fetchCount = 0
+        var shouldFetchMoreItems = true
         var searchResult: GameListSearchResult? = GameListSearchResult(JSON: [:])!
         
         func fetchGames(query: String) -> Completable {
             fetchCount += 1
+            return .empty()
+        }
+        
+        func fetchMoreItems() -> Completable {
             return .empty()
         }
     }
