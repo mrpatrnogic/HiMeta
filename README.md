@@ -3,7 +3,7 @@
 
 Small POC of an iOS application using modularized features with VIPER design pattern
 
-![game list](images/splash.png)
+![splash screen](images/splash.png)
 ![game list](images/search.png)
 
 
@@ -13,13 +13,13 @@ Small POC of an iOS application using modularized features with VIPER design pat
 - Infinite scroll as long as API keeps returning values
 - Build with modularization in mind
 - Implementing VIPER architecture for better responsibility distribution between types
-- Unit tested on non UIKit dependent classes (all tests passing and coverage over 80%)
+- Unit tested on all non UIKit dependent components (all tests passing and coverage over 80%)
 
-![game list](images/searchGIF.gif)
+![game list gif](images/searchGIF.gif)
 
 ![viper diagram](images/viper.png)
 
-![game list](images/tests.png)
+![unit tests](images/unitTests.png)
 
 To-do list
 ---
